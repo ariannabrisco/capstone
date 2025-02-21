@@ -1,0 +1,18 @@
+# notes from 02/21 docker demo from jer
+# note: probably use sqlLite as it's small, easy, and can allow people to download and run local
+
+services:
+
+db:
+  platform: linux/arm64
+  image:
+  container_name:
+  ports:
+    - "3388:3306"
+  environment:
+    - MYSQL_ROOT_PASSWORD=superSecretPassword
+    - 
+  volumes:
+    - db_persdata:/var/lib/mysql
+volumes:
+  db_persdata
