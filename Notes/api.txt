@@ -1,0 +1,31 @@
+const mysql = express()
+
+// Create a MySQL connection pool
+const pool = mySQL.createPool({
+    user: 'root',
+    password: admin123
+    database:
+    waitForConnections: true
+
+})
+
+app.get('/orders/:orderId, (req, res))
+
+app.post('/orders, (req, res))
+    pool.query
+    INSERT INTO values (?, ?, ?)
+
+app.listen(port, () => {
+
+})
+
+// ORM - object relational manager
+connectioncreateConnection()
+
+relations: {
+    user: {
+        type: "one-to-many",
+        target: "Order",
+        inverseSide: "true"
+    }
+}

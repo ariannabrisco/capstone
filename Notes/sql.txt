@@ -1,0 +1,47 @@
+datagrip IDE, mySQL
+
+schema - what data looks like
+
+users table - id & name; dont use email or username as ID
+make names of tables all lowercase!
+probably not enough chars for name (50)
+
+CREATE TABLE users
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO users (name)
+VALUES ('Alice),
+        ('Bob'),
+        ('Charlie');
+
+
+
+CREATE TABLE orders
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL.
+    name VARCHAR(50) NOT NULL,
+    ordered_at TIMESTAMP
+)
+
+INSERT INTO orders (user_id, name, ordered_at)
+VALUES (1, 'Order #1 Alice', '2025-01-01')
+        (2, 'Order #2 Bob', '2025-01-01');
+
+
+CREATE TABLE order_items(
+    quantity INT,
+    name VARCHAR(50) NOT NULL,
+)
+
+INSERT INTO order_items()
+
+
+SELECT *
+FROM orders;
+
+SELECT id, name
+FROM users;
