@@ -45,3 +45,27 @@ FROM orders;
 
 SELECT id, name
 FROM users;
+
+SELECT *
+FROM orders o
+LEFT JOIN users u on u.id = o.user_id
+
+SELECT *
+FROM order ORD
+LEFT JOIN users USR on USR.id = ORD.user_id
+
+SELECT COUNT(*) as order_count
+FROM orders;
+
+SELECT COUNT(*) as order_count
+FROM orders
+WHERE user_id = 1;
+
+SELECT user_id, COUNT(*) as order_count
+FROM orders
+GROUP BY user_id;
+
+SELECT name, SUM(quantity)
+FROM order_items
+GROUP BY name
+ORDER BY SUM(quantity)
