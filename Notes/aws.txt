@@ -1,0 +1,10 @@
+aws.amazon.com
+vpc - virtual private cloud
+do not use root login - not secure and can get charged lots of money
+iamuser - identity access manager
+can set budget for account too
+EC2
+everything goes inside VPC, handles all connections
+defualt comes with a VPC
+ECA > Launch Instance
+Instance type - resources it uses
