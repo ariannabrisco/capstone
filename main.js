@@ -10,14 +10,12 @@ let timerOn = false;
 let workCount = 0;
 let currentTimerMode = "Work"
 
-function startTimer() {
-    console.log("Start button pushed");
-    if (!timerOn) {
-        timerOn = true;
-        timer = setInterval(updateTimer, 1000);
-    }
+// formatting function
+function formatTime(minutes, seconds) {
+    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
+// encompassing timer function
 function updateTimer() {
     // when timer reaches 0:00
     if (minutes === 0 && seconds === 0){
@@ -50,7 +48,15 @@ function updateTimer() {
     }
     document.getElementById("timer").innerHTML = formatTime(minutes, seconds);
 }
-
-function formatTime(minutes, seconds) {
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+// button functions
+function startTimer() {
+    console.log("Start button pushed");
+    if (!timerOn) {
+        timerOn = true;
+        timer = setInterval(updateTimer, 1000);
+    }
 }
+
+// switching functions
+
+
