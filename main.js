@@ -67,17 +67,21 @@ function pauseTimer() {
 
 function stopTimer() {
     console.log("Stop button pushed");
-    clearInterval(timer);
-    timerOn = false;
-    minutes = workLength;
-    seconds = 0;
-    document.getElementById("timer").innerHTML = formatTime(minutes, seconds);
+    if (timerOn){
+        clearInterval(timer);
+        timerOn = false;
+        minutes = workLength;
+        seconds = 0;
+        document.getElementById("timer").innerHTML = formatTime(minutes, seconds);
+    }
 }
 
 function restartTimer(){
     console.log("Restart button pushed");
-    stopTimer();
-    startTimer();
+    if (timerOn){
+        stopTimer();
+        startTimer();
+    }
 }
 
 // switching functions
