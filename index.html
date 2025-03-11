@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍅 Pomodorable 🍅</title>
+    <title>🍅⏳</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>🍅 Pomodorable 🍅</h1>
-    <div id="timer">25:00</div>
+    <h1 style="color: #600000">🍅 Pomodorable 🍅</h1>
+    <div class="main">
+        <div class="timer-circle" id="timer">
+            2:00
+        </div>
+        <div class="timerButtons">
+            <button onClick="startTimer()">
+                Start
+            </button>
+            <button onClick="stopTimer()">
+                Stop
+            </button>
+            <button onClick="pauseTimer()">
+                Pause
+            </button>
+            <button onClick="restartTimer()">
+                Restart
+            </button>
+        </div>
+    </div>
 
-    <button class="buttons", id="start">Start</button>
-    <button class="buttons", id="stop">Stop</button>
-    <button class="buttons", id="pause">Pause</button>
-    <button class="buttons", id="restart">Restart</button>
+    <script src="main.js"></script>
 </body>
-
-<script src="script.js"></script>
 
 </html>
