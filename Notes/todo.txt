@@ -1,2 +1,4 @@
 - adam theme
 - modal with timeout
+- kahoot music
+- fun music (nintendo, hyper-specific cramming music)

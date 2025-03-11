@@ -13,3 +13,7 @@ palette - https://www.color-hex.com/color-palette/37385
 Coding:
 - https://www.geeksforgeeks.org/create-a-pomodoro-timer-using-html-css-and-javascript/
 - https://www.w3schools.com/howto/howto_css_modals.asp
+
+prev courses & my branches:
+- 422, 408, 405, 404
+  
