@@ -20,20 +20,32 @@ function updateTimer() {
     // when timer reaches 0:00
     if (minutes === 0 && seconds === 0){
         clearInterval(timer);
-         timerOn = false;
-         workCount++;
-         console.log(workCount);
-         console.log("Timer done")
-         if (currentTimerMode === "Work") {
+        timerOn = false;
+        console.log("Timer done. Seeing what to do next...")
+
+        // see where to switch to stop if worked 4 times
+        if (currentTimerMode === "Work") {
+            workCount++;  // increment work count
+            console.log(workCount);
+            console.log("****************************************");
             if (workCount < 4){
-                switchToBreak(shortBreakLength, "Short Break");
+                switchToBreak(shortBreakLength, "Short");
+            } else if(workCount == 4){
+                switchToBreak(longBreakLength, "Long");
             } else{
-                switchToBreak(longBreakLength, "Long Break");
+                console.log("borked here:");
+                console.log(workCount);
+                stopTimer();
             }
-    } else{
-        switchToWork();
-    }
-    return;
+        } else if(currentTimerMode === "Break"){
+            console.log("**************************************");
+            if (workCount == 4){
+                console.log("Session Complete!");
+                stopTimer();
+            } else{
+                switchToWork();
+            }
+        }
     }
 
     // when timer reaches n:00
@@ -48,12 +60,16 @@ function updateTimer() {
     }
     document.getElementById("timer").innerHTML = formatTime(minutes, seconds);
 }
+
 // button functions
 function startTimer() {
-    console.log("Start button pushed");
     if (!timerOn) {
+        if (workCount === 0){
+            console.log("Starting timer");
+            console.log(workCount);
+        }
         timerOn = true;
-        timer = setInterval(updateTimer, 1000);
+        timer = setInterval(updateTimer, 250);  //for demoing switch back to 1000 for every second
     }
 }
  
@@ -85,3 +101,32 @@ function restartTimer(){
 }
 
 // switching functions
+function switchToBreak(length, breakType){
+    console.log("Switching to break");
+    if (breakType === "Short"){
+        console.log("Short break starting");
+    } else if (breakType === "Long"){
+        console.log("Long break starting");
+    } else{
+        console.log("u in trouble");
+    }
+    clearInterval(timer);
+    timerOn = false;
+    minutes = length;
+    seconds = 0;
+    currentTimerMode = "Break";
+    document.getElementById("timer").innerHTML = formatTime(minutes, seconds);
+    startTimer();
+}
+
+function switchToWork(){  
+        console.log("Switching to work"); 
+        console.log(workCount);
+        clearInterval(timer);
+        timerOn = false;
+        minutes = workLength;
+        seconds = 0;
+        currentTimerMode = "Work";
+        document.getElementById("timer").innerHTML = formatTime(minutes, seconds);
+        startTimer();
+}
