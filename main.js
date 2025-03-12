@@ -1,7 +1,7 @@
 // lengths for demoing
-workLength = 2;
-shortBreakLength = 1;
-longBreakLength = 3;
+workLength = 10;
+shortBreakLength = 2;
+longBreakLength = 6;
 
 let timer;
 let minutes = workLength; // allows for dif lengths
@@ -42,6 +42,8 @@ function updateTimer() {
             if (workCount == 4){
                 console.log("Session Complete!");
                 stopTimer();
+                alert("All done!");
+                return;
             } else{
                 switchToWork();
             }
@@ -69,7 +71,7 @@ function startTimer() {
             console.log(workCount);
         }
         timerOn = true;
-        timer = setInterval(updateTimer, 250);  //for demoing switch back to 1000 for every second
+        timer = setInterval(updateTimer, 10);  //for demoing switch back to 1000 for every second
     }
 }
  
