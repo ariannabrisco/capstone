@@ -94,14 +94,6 @@ function stopTimer() {
     }
 }
 
-function restartTimer(){
-    console.log("Restart button pushed");
-    if (timerOn){
-        stopTimer();
-        startTimer();
-    }
-}
-
 // switching functions
 function switchToBreak(length, breakType){
     console.log("Switching to break");
