@@ -14,9 +14,25 @@
         <li><a href="tracking.html">Tracking</a></li>
     </ul>
     <h1 style="color: #600000">🍅 Pomodorable 🍅</h1>
+    <div class="timerChoice">
+        <p>
+            Choose your timer mode:
+        </p>
+        <select id="timerDuration" onchange="document.getElementById('timer').innerText = this.value;">
+            <option value="25:00" selected>25/5/15 (default)</option>
+            <option value="50:00">50/10/30</option>
+            <option value="5:00">5 Minute Burst</option>
+        </select>
+        <p>
+            Choose your study mode:
+            <select id="studyMode" onchange="if (this.value === 'infinite') { document.getElementById('timer').innerText = '∞'; } else { document.getElementById('timer').innerText = document.getElementById('timerDuration').value; }">
+                <option value="4">4 Sessions (default)</option>
+                <option value="infinite">Infinite</option>
+        </p>
+    </div>
     <div class="main">
         <div class="timer-circle" id="timer">
-            10:00
+            25:00
         </div>
         <div class="timerButtons">
             <button onClick="startTimer()">

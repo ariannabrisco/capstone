@@ -83,3 +83,10 @@ ul {
  li a:hover {
    background-color: #111;
  }
+
+ .timerChoice {
+   justify-content: left;
+   display: flex;
+   flex-direction: column;
+   background-color: #4c5a23;
+ }

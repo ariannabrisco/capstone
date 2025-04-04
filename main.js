@@ -1,7 +1,7 @@
 // lengths for demoing
-workLength = 10;
-shortBreakLength = 2;
-longBreakLength = 6;
+workLength = 25;
+shortBreakLength = 5;
+longBreakLength = 15;
 
 let timer;
 let minutes = workLength; // allows for dif lengths
@@ -71,7 +71,7 @@ function startTimer() {
             console.log(workCount);
         }
         timerOn = true;
-        timer = setInterval(updateTimer, 10);  //for demoing switch back to 1000 for every second
+        timer = setInterval(updateTimer, 1000);  //for demoing switch back to 1000 for every second
     }
 }
  
@@ -123,4 +123,8 @@ function switchToWork(){
         currentTimerMode = "Work";
         document.getElementById("timer").innerHTML = formatTime(minutes, seconds);
         startTimer();
+}
+
+function choose(){
+
 }
