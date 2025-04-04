@@ -1,0 +1,15 @@
+04/04 
+can set up relationships
+service - logic, coords between controller and 
+repo - what sists between us and database
+as long as connected to model, dont have to do a lot of it (define, delete, etc.)
+dashboarding - custom sql queries
+repo handles custom queries
+very verbose names
+enum can help with free validation versus string
+
+how to test APIs
+sometimes built in clients in IDEs
+like postman
+lots of APIs have collections for postman
+put all report requests in one dashboard/request versus requesting each one by one
