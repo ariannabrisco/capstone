@@ -90,3 +90,8 @@ ul {
    flex-direction: column;
    background-color: #4c5a23;
  }
+
+ .dark-mode {
+   background-color: #333;
+   color: #fff;
+ }

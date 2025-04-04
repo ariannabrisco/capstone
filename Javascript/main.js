@@ -125,6 +125,20 @@ function switchToWork(){
         startTimer();
 }
 
-function choose(){
-
+function chooseTheme(){
+    // theme chooser function
+    let theme = prompt("Choose a theme: (1) Light, (2) Dark");
+    if (theme === "1") {
+        document.body.style.backgroundColor = "#ffffff"; // light background
+        document.body.style.color = "#000000"; // dark text
+        console.log("Light theme chosen");
+    } else if (theme === "2") {
+        document.body.style.backgroundColor = "#333333"; // dark background
+        document.body.style.color = "#ffffff"; // light text
+        console.log("Dark theme chosen");
+    } else {
+        alert("Invalid choice, defaulting to light theme.");
+        document.body.style.backgroundColor = "#ffffff";
+        document.body.style.color = "#000000";
+    }
 }
